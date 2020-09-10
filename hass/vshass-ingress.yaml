@@ -4,7 +4,7 @@ metadata:
   name: vshass
 spec:
   rules:
-  - host: vshass.xip.io
+  - host: vshass2.xip.io
     http:
       paths:
       - backend:
