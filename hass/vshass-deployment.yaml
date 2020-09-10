@@ -25,7 +25,7 @@ spec:
           volumeMounts:
           - mountPath: "/home/coder/project"
             name: hass-pv-storage
-          args: ["--allow-http", "--no-auth", "--disable-telemetry"]
+          args: ["--no-auth", "--disable-telemetry"]
       affinity:
         podAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
