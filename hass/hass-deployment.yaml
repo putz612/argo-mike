@@ -5,6 +5,10 @@ metadata:
 spec:
   replicas: 1
   revisionHistoryLimit: 3
+  volumes:
+    - name: hass-pv-storage
+      persistentVolumeClaim:
+        claimName: hass-pv-claim
   selector:
     matchLabels:
       app: hass
@@ -18,3 +22,6 @@ spec:
         name: hass
         ports:
         - containerPort: 8123
+        volumeMounts:
+        - mountPath: "/config"
+          name: hass-pv-storage
