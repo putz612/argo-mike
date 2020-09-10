@@ -5,10 +5,6 @@ metadata:
 spec:
   replicas: 1
   revisionHistoryLimit: 3
-  volumes:
-    - name: hass-pv-storage
-      persistentVolumeClaim:
-        claimName: hass-pv-claim
   selector:
     matchLabels:
       app: hass
@@ -17,7 +13,11 @@ spec:
       labels:
         app: hass
     spec:
-      containers:
+    volumes:
+      - name: hass-pv-storage
+        persistentVolumeClaim:
+          claimName: hass-pv-claim
+    containers:
       - image: homeassistant/home-assistant:0.114.4
         name: hass
         ports:
