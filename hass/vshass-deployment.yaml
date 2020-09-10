@@ -23,7 +23,7 @@ spec:
           ports:
           - containerPort: 8080
           volumeMounts:
-          - mountPath: "/home/coder/project"
+          - mountPath: "/home/coder/hass"
             name: hass-pv-storage
       affinity:
         podAffinity:
