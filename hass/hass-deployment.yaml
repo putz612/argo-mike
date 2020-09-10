@@ -20,6 +20,9 @@ spec:
       containers:
         - image: homeassistant/home-assistant:0.114.4
           name: hass
+          env:
+            - name: TZ
+              value: "America\Chicago"
           ports:
           - containerPort: 8123
           volumeMounts:
