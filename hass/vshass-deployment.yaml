@@ -17,7 +17,7 @@ spec:
         - name: vshass-pv-storage
           persistentVolumeClaim:
             claimName: vshass-pv-claim
-        - name: vshass-pv-storage
+        - name: hass-pv-storage
           persistentVolumeClaim:
             claimName: hass-pv-claim
       containers:
