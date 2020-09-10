@@ -23,8 +23,9 @@ spec:
           ports:
           - containerPort: 8080
           volumeMounts:
-          - mountPath: "/config"
+          - mountPath: "/home/coder/project"
             name: hass-pv-storage
+          args: ["--allow-http", "--no-auth", "--disable-telemetry"]
       affinity:
         podAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
