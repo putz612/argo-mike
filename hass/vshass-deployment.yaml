@@ -25,7 +25,6 @@ spec:
           volumeMounts:
           - mountPath: "/home/coder/project"
             name: hass-pv-storage
-          command: ["--no-auth", "--disable-telemetry"]
       affinity:
         podAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
