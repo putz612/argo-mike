@@ -14,7 +14,10 @@ spec:
         app: vshass
     spec:
       volumes:
-        - name: hass-pv-storage
+        - name: vshass-pv-storage
+          persistentVolumeClaim:
+            claimName: vshass-pv-claim
+        - name: vshass-pv-storage
           persistentVolumeClaim:
             claimName: hass-pv-claim
       containers:
@@ -22,6 +25,9 @@ spec:
           name: vshass
           ports:
           - containerPort: 8080
+          volumeMounts:
+          - mountPath: "/home/coder"
+            name: vshass-pv-storage
           volumeMounts:
           - mountPath: "/home/coder/hass"
             name: hass-pv-storage
