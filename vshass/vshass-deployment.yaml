@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hass
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: hass
+  template:
+    metadata:
+      labels:
+        app: hass
+    spec:
+      volumes:
+        - name: hass-pv-storage
+          persistentVolumeClaim:
+            claimName: hass-pv-claim
+      containers:
+        - image: homeassistant/home-assistant:0.114.4
+          name: hass
+          env:
+            - name: TZ
+              value: "America/Chicago"
+          ports:
+          - containerPort: 8123
+          volumeMounts:
+          - mountPath: "/config"
+            name: hass-pv-storage
