@@ -34,3 +34,4 @@ spec:
                   operator: In
                   values:
                     - hass
+              topologyKey: "kubernetes.io/hostname"
