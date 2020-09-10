@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hassdb
+spec:
+  strategy:
+    rollingUpdate:
+      maxSurge: 0
+      maxUnavailable: 1
+    type: RollingUpdate
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: hassdb
+  template:
+    metadata:
+      labels:
+        app: hassdb
+    spec:
+      volumes:
+        - name: hassdb-pv-storage
+          persistentVolumeClaim:
+            claimName: hassdb-pv-claim
+      containers:
+        - image: mariadb:10.5
+          name: hassdb
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: hassdb
+                  key: MYSQL_ROOT_PASSWORD
+            - name: MYSQL_DATABASE
+              value: "hass"
+            - name: MYSQL_USER
+              value: "hass"
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: hassdb
+                  key: MYSQL_ROOT_PASSWORD
+          ports:
+          - containerPort: 3306
+          volumeMounts:
+          - mountPath: "/var/lib/mysql"
+            name: hassdb-pv-storage
