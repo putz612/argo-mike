@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: hass-pv-claim
 spec:
-  storageClassName: manual
+  storageClassName: longhorn
   accessModes:
     - ReadWriteOnce
   resources:
