@@ -21,7 +21,7 @@ spec:
         - image: codercom/code-server:3.5.0
           name: vshass
           ports:
-          - containerPort: 80
+          - containerPort: 8080
           volumeMounts:
           - mountPath: "/config"
             name: hass-pv-storage
