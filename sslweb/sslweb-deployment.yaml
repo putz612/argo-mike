@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ssltest
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: ssltest
+  template:
+    metadata:
+      labels:
+        app: ssltest
+    spec:
+      containers:
+        - image: nginx:alpine
+          name: ssltest
+          ports:
+          - containerPort: 80

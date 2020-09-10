@@ -1,0 +1,12 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: vshass
+spec:
+  rules:
+  - host: vshass2.xip.io
+    http:
+      paths:
+      - backend:
+          serviceName: vshass
+          servicePort: 80
