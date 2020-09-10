@@ -3,6 +3,11 @@ kind: Deployment
 metadata:
   name: hass
 spec:
+  strategy:
+    rollingUpdate:
+      maxSurge: 0
+      maxUnavailable: 1
+    type: RollingUpdate
   replicas: 1
   revisionHistoryLimit: 3
   selector:
