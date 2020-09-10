@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hass
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: hass
+  template:
+    metadata:
+      labels:
+        app: hass
+    spec:
+      containers:
+      - image: homeassistant/home-assistant:0.114.4
+        name: 
+        ports:
+        - containerPort: 8123
