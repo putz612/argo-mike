@@ -13,15 +13,15 @@ spec:
       labels:
         app: hass
     spec:
-    volumes:
-      - name: hass-pv-storage
-        persistentVolumeClaim:
-          claimName: hass-pv-claim
-    containers:
-      - image: homeassistant/home-assistant:0.114.4
-        name: hass
-        ports:
-        - containerPort: 8123
-        volumeMounts:
-        - mountPath: "/config"
-          name: hass-pv-storage
+      volumes:
+        - name: hass-pv-storage
+          persistentVolumeClaim:
+            claimName: hass-pv-claim
+      containers:
+        - image: homeassistant/home-assistant:0.114.4
+          name: hass
+          ports:
+          - containerPort: 8123
+          volumeMounts:
+          - mountPath: "/config"
+            name: hass-pv-storage
