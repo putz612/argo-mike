@@ -24,7 +24,5 @@ spec:
     targetPort: dns
   selector:
     app: pihole
-    io.cattle.field/appId: pihole
-    release: pihole
   sessionAffinity: None
   type: LoadBalancer
