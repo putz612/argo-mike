@@ -1,0 +1,12 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hass
+spec:
+  rules:
+  - host: hass.xip.io
+    http:
+      paths:
+      - backend:
+          serviceName: hass
+          servicePort: 80
