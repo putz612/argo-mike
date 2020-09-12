@@ -1,12 +1,12 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: hass
+  name: pihole
 spec:
   rules:
-  - host: hass.xip.io
+  - host: pihole.xip.io
     http:
       paths:
       - backend:
-          serviceName: hass
+          serviceName: pihole-tcp
           servicePort: 80
