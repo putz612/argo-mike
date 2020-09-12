@@ -3,9 +3,9 @@ kind: PersistentVolumeClaim
 metadata:
   name: hass-pv-claim
 spec:
-  storageClassName: longhorn
+  storageClassName: longhorn-keep
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 10Gi
+      storage: 1Gi
