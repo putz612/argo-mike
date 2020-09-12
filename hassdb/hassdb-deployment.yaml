@@ -39,7 +39,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: hassdb
-                  key: MYSQL_ROOT_PASSWORD
+                  key: MYSQL_PASSWORD
           ports:
           - containerPort: 3306
           volumeMounts:
