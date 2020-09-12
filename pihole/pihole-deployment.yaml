@@ -34,7 +34,7 @@ spec:
           value: 9.9.9.9
         - name: DNS2
           value: 149.112.112.112
-        image: pihole/pihole:v5.1.1
+        image: pihole/pihole:v5.1.2
         imagePullPolicy: IfNotPresent
         livenessProbe:
           failureThreshold: 10
