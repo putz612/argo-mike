@@ -4,7 +4,7 @@ metadata:
   name: hass
 spec:
   rules:
-  - host: hass2.xip.io
+  - host: hass.xip.io
     http:
       paths:
       - backend:
