@@ -1,12 +1,12 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: hassdb_adminer
+  name: hassdb-adminer
 spec:
   rules:
   - host: hassdb.xip.io
     http:
       paths:
       - backend:
-          serviceName: hassdb_adminer
+          serviceName: hassdb-adminer
           servicePort: 8080
