@@ -45,3 +45,7 @@ spec:
           volumeMounts:
           - mountPath: "/var/lib/mysql"
             name: hassdb-pv-storage
+        - image: adminer:4.7
+          name: hassdb-adminer
+          ports:
+            - containerPort: 8080
