@@ -1,14 +1,17 @@
-apiVersion: cert-manager.io/v1
-kind: Issuer
-metadata:
-  name: cyberglitch-issuer
-spec:
-  acme:
-    ...
-    solvers:
-    - dns01:
-        cloudflare:
-          email: jsievert@gmail.com
-          apiTokenSecretRef:
-            name: cloudflare-api-token-secret
-            key: api-token
+ apiVersion: cert-manager.io/v1alpha2
+ kind: ClusterIssuer
+ metadata:
+   name: letsencrypt-staging
+ spec:
+   acme:
+     server: https://acme-staging-v02.api.letsencrypt.org/directory
+     email: jsievert@gmail.com
+     privateKeySecretRef:
+       name: letsencrypt-staging
+     solvers:
+     - dns01:
+         cloudflare:
+           email: jsievert@gmail.com
+           apiTokenSecretRef:
+             name: cloudflare-api-token-secret
+             key: api-token
