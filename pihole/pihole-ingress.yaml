@@ -10,7 +10,7 @@ spec:
     http:
       paths:
       - backend:
-          serviceName: pihole-tcp
+          serviceName: pihole-http
           servicePort: 80
   tls:
   - hosts:
