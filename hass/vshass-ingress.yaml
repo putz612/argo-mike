@@ -2,11 +2,17 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: vshass
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
 spec:
   rules:
-  - host: vshass.xip.io
+  - host: vshass.sievert.fun
     http:
       paths:
       - backend:
           serviceName: vshass
           servicePort: 80
+  tls:
+  - hosts:
+    - vshass.sievert.fun
+    secretName: vshass-cert
