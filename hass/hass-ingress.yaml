@@ -2,11 +2,17 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: hass
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt
 spec:
   rules:
-  - host: hass.xip.io
+  - host: hass.sievert.fun
     http:
       paths:
       - backend:
           serviceName: hass
           servicePort: 80
+  tls:
+  - hosts:
+    - hass.sievert.fun
+    secretName: hass-cert
