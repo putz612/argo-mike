@@ -2,8 +2,8 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: hass
-    annotations:
-      cert-manager.io/cluster-issuer: letsencrypt
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
 spec:
   rules:
   - host: hass.sievert.fun
