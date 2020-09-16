@@ -2,11 +2,17 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: pihole
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
 spec:
   rules:
-  - host: pihole.xip.io
+  - host: pihole.sievert.fun
     http:
       paths:
       - backend:
           serviceName: pihole-tcp
           servicePort: 80
+  tls:
+  - hosts:
+    - pihiole.sievert.fun
+    secretName: pihole-cert
