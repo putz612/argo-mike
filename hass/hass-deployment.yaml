@@ -23,7 +23,7 @@ spec:
           persistentVolumeClaim:
             claimName: hass-pv-claim
       containers:
-        - image: homeassistant/home-assistant:0.115.1
+        - image: homeassistant/home-assistant:0.115.2
           name: hass
           env:
             - name: TZ
