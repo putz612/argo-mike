@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chronograf
+spec:
+  strategy:
+    rollingUpdate:
+      maxSurge: 0
+      maxUnavailable: 1
+    type: RollingUpdate
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: chronograf
+  template:
+    metadata:
+      labels:
+        app: chronograf
+    spec:
+      volumes:
+        - name: chronograf-pv-storage
+          persistentVolumeClaim:
+            claimName: chronograf-pv-claim
+      containers:
+        - image: chronograf:1.8
+          name: chronograf
+          env:
+            - name: influxdb-url
+              value: "http://influxdb.sievert.fun"
+          ports:
+          - containerPort: 8888
+          volumeMounts:
+          - mountPath: "/var/lib/chronograf"
+            name: chronograf-pv-storage
