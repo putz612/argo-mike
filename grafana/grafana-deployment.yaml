@@ -28,5 +28,5 @@ spec:
           ports:
           - containerPort: 3000
           volumeMounts:
-          - mountPath: "/var/lib/influxdb"
+          - mountPath: "/var/lib/grafana"
             name: grafana-pv-storage
