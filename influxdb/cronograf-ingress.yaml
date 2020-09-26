@@ -11,7 +11,7 @@ spec:
       paths:
       - backend:
           serviceName: chronograf
-          servicePort: 8086
+          servicePort: 8888
   tls:
   - hosts:
     - chronograf.sievert.fun
