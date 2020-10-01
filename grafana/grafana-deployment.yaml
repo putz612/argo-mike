@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hass
+  name: grafana
 spec:
   strategy:
     rollingUpdate:
@@ -12,24 +12,21 @@ spec:
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: hass
+      app: grafana
   template:
     metadata:
       labels:
-        app: hass
+        app: grafana
     spec:
       volumes:
-        - name: hass-pv-storage
+        - name: grafana-pv-storage
           persistentVolumeClaim:
-            claimName: hass-pv-claim
+            claimName: grafana-pv-claim
       containers:
-        - image: homeassistant/home-assistant:0.115.6
-          name: hass
-          env:
-            - name: TZ
-              value: "America/Chicago"
+        - image: grafana/grafana:7.2.0
+          name: grafana
           ports:
-          - containerPort: 8123
+          - containerPort: 3000
           volumeMounts:
-          - mountPath: "/config"
-            name: hass-pv-storage
+          - mountPath: "/var/lib/grafana"
+            name: grafana-pv-storage

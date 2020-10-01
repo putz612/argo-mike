@@ -1,18 +1,18 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: pihole
+  name: chronograf
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt
 spec:
   rules:
-  - host: pihole.sievert.fun
+  - host: chronograf.sievert.fun
     http:
       paths:
       - backend:
-          serviceName: pihole-http
-          servicePort: 80
+          serviceName: chronograf
+          servicePort: 8888
   tls:
   - hosts:
-    - pihole.sievert.fun
-    secretName: pihole-cert
+    - chronograf.sievert.fun
+    secretName: chronograf-cert

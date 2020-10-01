@@ -21,6 +21,8 @@ spec:
     spec:
       containers:
       - env:
+        - name: TZ
+          value: "America/Chicago"
         - name: WEB_PORT
           value: "80"
         - name: VIRTUAL_HOST

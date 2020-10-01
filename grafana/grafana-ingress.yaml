@@ -1,18 +1,18 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: pihole
+  name: grafana
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt
 spec:
   rules:
-  - host: pihole.sievert.fun
+  - host: grafana.sievert.fun
     http:
       paths:
       - backend:
-          serviceName: pihole-http
-          servicePort: 80
+          serviceName: grafana
+          servicePort: 3000
   tls:
   - hosts:
-    - pihole.sievert.fun
-    secretName: pihole-cert
+    - grafana.sievert.fun
+    secretName: grafana-cert

@@ -1,18 +1,18 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: pihole
+  name: inflxudb
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt
 spec:
   rules:
-  - host: pihole.sievert.fun
+  - host: influxdb.sievert.fun
     http:
       paths:
       - backend:
-          serviceName: pihole-http
-          servicePort: 80
+          serviceName: influxdb
+          servicePort: 8086
   tls:
   - hosts:
-    - pihole.sievert.fun
-    secretName: pihole-cert
+    - influxdb.sievert.fun
+    secretName: influxdb-cert
