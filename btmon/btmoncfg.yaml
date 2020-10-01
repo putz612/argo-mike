@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: btmon-cfg
+data:
+  btmon.cfg: |-
+    [source]
+    device_type = gem
+    ip_host = 192.168.100.75
+    ip_read = true
+    ip_port = 8000
+    ip_mode = client
+    include_current = true
+    reverse_polarity = true
+    full_serials = true
+
+    [influxdb]
+    influxdb_out = true
+    influxdb_host = influxdb.influxdb
+    influxdb_port = 80
+    influxdb_upload_period = 10
+    influxdb_database = btmon
+    influxdb_measurement = energy
+    influxdb_mode = row
+    influxdb_db_schema = ecmreadext
