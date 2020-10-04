@@ -36,7 +36,3 @@ spec:
         - containerPort: 5053
           name: http
           protocol: TCP
-        resources:
-          limits:
-            memory: 200Mi
-            cpu: 300m
