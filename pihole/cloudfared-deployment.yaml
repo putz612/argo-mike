@@ -36,5 +36,5 @@ spec:
         - containerPort: 5053
           name: http
           protocol: TCP
-        command:
+        args:
             - "proxy-dns"
