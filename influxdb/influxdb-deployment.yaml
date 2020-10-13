@@ -23,7 +23,7 @@ spec:
           persistentVolumeClaim:
             claimName: influxdb-pv-claim
       containers:
-        - image: influxdb:1.8
+        - image: influxdb:1.8.3
           name: influxdb
           env:
             - name: INFLUXDB_ADMIN_USER

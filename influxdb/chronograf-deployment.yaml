@@ -23,7 +23,7 @@ spec:
           persistentVolumeClaim:
             claimName: chronograf-pv-claim
       containers:
-        - image: chronograf:1.8
+        - image: chronograf:1.8.6
           name: chronograf
           env:
             - name: influxdb-url
