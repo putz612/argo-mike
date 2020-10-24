@@ -11,7 +11,3 @@ ingress:
     - secretName: grafana-tls
       hosts:
         - grafana.sievert.fun
-
-grafana.ini:
-  server:
-    domain: grafana.sievert.fun
