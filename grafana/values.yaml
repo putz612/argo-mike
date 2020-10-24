@@ -1,0 +1,17 @@
+deploymentStrategy:
+  type: Recreate
+
+ingress:
+  enabled: true
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
+  hosts:
+    - grafana.sievert.fun
+  tls:
+    - secretName: grafana-tls
+      hosts:
+        - grafana.sievert.fun
+
+grafana.ini:
+  server:
+    domain: grafana.sievert.fun
