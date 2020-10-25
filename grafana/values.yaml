@@ -12,3 +12,6 @@ grafana:
       - secretName: grafana-tls
         hosts:
           - grafana.sievert.fun
+  persistence:
+    enabled: true
+    size: 2Gi
