@@ -1,0 +1,15 @@
+grafana:
+  deploymentStrategy:
+    type: Recreate
+  timezone: "America/Chicago"
+  ingress:
+    enabled: true
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt
+    path: /
+    hosts:
+      - cp.sievert.fun
+    tls:
+      - secretName: cp-tls
+        hosts:
+          - cp.sievert.fun
