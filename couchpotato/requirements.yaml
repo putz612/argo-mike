@@ -1,4 +1,0 @@
-dependencies:
-- name: couchpotato
-  version: 2.0.1
-  repository: https://k8s-at-home.com/charts/
