@@ -1,4 +1,4 @@
-grafana:
+couchpotato:
   deploymentStrategy:
     type: Recreate
   timezone: "America/Chicago"
