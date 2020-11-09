@@ -4,6 +4,7 @@ chronograf:
   ingress:
     enabled: true
     tls: true
+    secretName: chronograf-tls
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt
     path: /
