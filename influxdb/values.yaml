@@ -3,6 +3,7 @@ influxdb:
     type: Recreate
   ingress:
     enabled: true
+    certManger: true
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt
     path: /
