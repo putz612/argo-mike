@@ -1,4 +1,4 @@
 dependencies:
-- name: bitnami/influxdb
+- name: influxdb
   version: 0.6.11
   repository: https://charts.bitnami.com/bitnami
