@@ -6,13 +6,13 @@ influxdb:
     certManger: true
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt
-    path: /
     hosts:
-      - influxdb.sievert.fun
+      - name: influxdb.sievert.fun
+        path: /
     tls:
-      - secretName: influxdb-tls
-        hosts:
-          - influxdb.sievert.fun
+    - hosts:
+      - influxdb.sievert.fun
+      secretName: influxdb-tls
   persistence:
     enabled: true
     size: 10Gi

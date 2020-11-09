@@ -3,6 +3,8 @@ grafana:
     type: Recreate
   ingress:
     enabled: true
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt
     path: /
     hosts:
       - grafana.sievert.fun
