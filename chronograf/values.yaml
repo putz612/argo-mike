@@ -1,17 +1,13 @@
-grafana:
+chronograf:
   deploymentStrategy:
     type: Recreate
   ingress:
     enabled: true
+    tls: true
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt
     path: /
-    hosts:
-      - chronograf.sievert.fun
-    tls:
-      - secretName: chronograf-tls
-        hosts:
-          - chronograf.sievert.fun
+    hostname: chronograf.sievert.fun
   persistence:
     enabled: true
     size: 1Gi
