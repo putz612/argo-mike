@@ -4,16 +4,12 @@ influxdb:
     type: Recreate
   ingress:
     enabled: true
-    certManger: true
+    tls: true
+    secretName: influxdb-tls
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt
-    hosts:
-      - name: influxdb.sievert.fun
-        path: /
-    tls:
-    - hosts:
-      - influxdb.sievert.fun
-      secretName: influxdb-tls
+    path: /
+    hostname: influxdb.sievert.fun
   persistence:
     enabled: true
     size: 10Gi
