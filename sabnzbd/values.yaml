@@ -1,0 +1,15 @@
+couchpotato:
+  deploymentStrategy:
+    type: Recreate
+  timezone: "America/Chicago"
+  ingress:
+    enabled: true
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt
+    path: /
+    hosts:
+      - sabnzbd.sievert.fun
+    tls:
+      - secretName: sabnzbd-tls
+        hosts:
+          - sabnzbd.sievert.fun
