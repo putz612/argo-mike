@@ -13,6 +13,6 @@ couchpotato:
       - secretName: cp-tls
         hosts:
           - cp.sievert.fun
-    persistence:
-      movies:
-        existingClaim: cp-movies
+  persistence:
+    movies:
+      existingClaim: cp-movies
