@@ -1,4 +1,4 @@
-couchpotato:
+unifi:
   deploymentStrategy:
     type: Recreate
   image:
