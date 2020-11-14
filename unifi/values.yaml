@@ -1,0 +1,17 @@
+couchpotato:
+  deploymentStrategy:
+    type: Recreate
+  image:
+    tag: stable-6
+  timezone: "America/Chicago"
+  ingress:
+    enabled: true
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt
+    path: /
+    hosts:
+      - unifi.sievert.fun
+    tls:
+      - secretName: unifi-tls
+        hosts:
+          - unifi.sievert.fun
