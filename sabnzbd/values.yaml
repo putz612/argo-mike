@@ -1,4 +1,4 @@
-couchpotato:
+sabnzbd:
   deploymentStrategy:
     type: Recreate
   timezone: "America/Chicago"
