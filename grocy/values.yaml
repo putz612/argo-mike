@@ -1,0 +1,15 @@
+grocy:
+  deploymentStrategy:
+    type: Recreate
+  timezone: "America/Chicago"
+  ingress:
+    enabled: true
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt
+    path: /
+    hosts:
+      - grocy.sievert.fun
+    tls:
+      - secretName: grocy-tls
+        hosts:
+          - grocy.sievert.fun
