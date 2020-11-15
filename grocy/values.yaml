@@ -6,6 +6,7 @@ grocy:
     enabled: true
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt
+      nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
     path: /
     hosts:
       - grocy.sievert.fun
