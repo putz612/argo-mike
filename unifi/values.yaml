@@ -1,9 +1,9 @@
 unifi:
   deploymentStrategy:
     type: Recreate
+  timezone: "America/Chicago"
   image:
     tag: stable-6
-  timezone: "America/Chicago"
   ingress:
     enabled: true
     annotations:
