@@ -18,4 +18,17 @@ unifi:
           - unifi.sievert.fun
   controllerService:
     type: LoadBalancer
+    externalTrafficPolicy: Local
+    loadBalancerIP: 192.168.100.43
+  stunService:
+    type: LoadBalancer
+    externalTrafficPolicy: Local
+    loadBalancerIP: 192.168.100.43
+  syslogService:
+    type: LoadBalancer
+    externalTrafficPolicy: Local
+    loadBalancerIP: 192.168.100.43
+  discoveryService:
+    type: LoadBalancer
+    externalTrafficPolicy: Local
     loadBalancerIP: 192.168.100.43
