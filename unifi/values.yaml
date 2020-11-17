@@ -8,6 +8,7 @@ unifi:
     enabled: true
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt
+      nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
     path: /
     hosts:
       - unifi.sievert.fun
