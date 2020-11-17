@@ -1,0 +1,7 @@
+name: netbox
+version: 0.0.1
+apiVersion: v2
+dependencies:
+  - name: netbox
+    version: 2.30.0
+    repository: https://charts.boo.tc

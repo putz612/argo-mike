@@ -1,0 +1,14 @@
+netbox:
+  updateStrategy: Recreate
+  timezone: "America/Chicago"
+  ingress:
+    enabled: true
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt
+    path: /
+    hosts:
+      - netbox.sievert.fun
+    tls:
+      - secretName: netbox-tls
+        hosts:
+          - netbox.sievert.fun
