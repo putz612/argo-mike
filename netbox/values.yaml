@@ -1,4 +1,6 @@
 netbox:
+  updateStrategy: 
+    type: Recreate
   ingress:
     enabled: true
     annotations:
