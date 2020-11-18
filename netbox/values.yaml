@@ -3,9 +3,10 @@ netbox:
     enabled: true
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt
-    path: /
     hosts:
-      - netbox.sievert.fun
+      - host: netbox.sievert.fun
+        paths:
+          - /
     tls:
       - secretName: netbox-tls
         hosts:
