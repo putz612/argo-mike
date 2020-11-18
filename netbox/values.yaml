@@ -1,6 +1,4 @@
 netbox:
-  updateStrategy: Recreate
-  timezone: "America/Chicago"
   ingress:
     enabled: true
     annotations:
