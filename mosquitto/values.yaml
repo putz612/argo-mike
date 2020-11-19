@@ -1,0 +1,10 @@
+mosquitto:
+  deploymentStrategy:
+    type: Recreate
+service:
+  annotations: {}
+  type: NodePort
+  # Set a nodePort which is available
+    nodePort: 31883
+  # externalTrafficPolicy:
+  # loadBalancerIP:
