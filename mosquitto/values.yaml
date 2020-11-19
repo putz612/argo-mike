@@ -3,7 +3,3 @@ mosquitto:
     type: Recreate
   service:
     type: NodePort
-  # Set a nodePort which is available
-      nodePort: 31883
-  # externalTrafficPolicy:
-  # loadBalancerIP:
