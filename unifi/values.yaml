@@ -4,6 +4,7 @@ unifi:
   timezone: "America/Chicago"
   image:
     tag: stable-6
+    pullPolicy: IfNotPresent
   ingress:
     enabled: true
     annotations:
