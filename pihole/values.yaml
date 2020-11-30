@@ -27,3 +27,8 @@ pihole:
     annotations:
       metallb.universe.tf/allow-shared-ip: pihole-svc
     type: LoadBalancer
+
+  doh:
+    enabled: true
+  image:
+    tag: "5.2"
