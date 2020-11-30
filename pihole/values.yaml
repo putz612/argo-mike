@@ -31,4 +31,4 @@ pihole:
   doh:
     enabled: true
   image:
-    tag: "5.2"
+    tag: "v5.2"
