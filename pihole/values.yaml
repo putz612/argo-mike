@@ -1,0 +1,29 @@
+pihole:
+  deploymentStrategy:
+    type: Recreate
+  timezone: "America/Chicago"
+  ingress:
+    enabled: true
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt
+    path: /
+    hosts:
+      - pihole.sievert.fun
+    tls:
+      - secretName: pihole-tls
+        hosts:
+          - pihole.sievert.fun
+  persistentVolumeClaim:
+  enabled: true
+
+  serviceTCP:
+    loadBalancerIP: 192.168.100.40
+    annotations:
+      metallb.universe.tf/allow-shared-ip: pihole-svc
+    type: LoadBalancer
+
+  serviceUDP:
+    loadBalancerIP: 192.168.100.40
+    annotations:
+      metallb.universe.tf/allow-shared-ip: pihole-svc
+    type: LoadBalancer
