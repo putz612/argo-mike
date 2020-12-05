@@ -13,3 +13,5 @@ home-assistant:
       - secretName: hass-tls
         hosts:
           - hass2.sievert.fun
+  image:
+    tag: 0.118.5
