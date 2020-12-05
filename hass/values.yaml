@@ -24,7 +24,7 @@ home-assistant:
       path: /
       hosts:
         - vshass.sievert.fun
-      tls: []
+      tls: 
         - secretName: vshass-tls
           hosts:
             - vshass.sievert.fun
