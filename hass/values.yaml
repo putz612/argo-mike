@@ -15,3 +15,21 @@ home-assistant:
           - hass2.sievert.fun
   image:
     tag: 0.118.5
+  vscode:
+    enabled: true
+    ingress:
+      enabled: false
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt
+      path: /
+      hosts:
+        - vshass.sievert.fun
+      tls: []
+        - secretName: vshass-tls
+          hosts:
+            - vshass.sievert.fun
+  mariadb:
+    enabled: true
+    primary:
+      persistence:
+        enabled: true
