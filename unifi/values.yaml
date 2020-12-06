@@ -19,21 +19,21 @@ unifi:
           - unifi.sievert.fun
   controllerService:
     type: LoadBalancer
-    loadBalancerIP: 192.168.100.43
+    loadBalancerIP: 192.168.5.15
     annotations:
       metallb.universe.tf/allow-shared-ip: unifi-svc
   stunService:
     type: LoadBalancer
-    loadBalancerIP: 192.168.100.43
+    loadBalancerIP: 192.168.5.15
     annotations:
       metallb.universe.tf/allow-shared-ip: unifi-svc
   syslogService:
     type: LoadBalancer
-    loadBalancerIP: 192.168.100.43
+    loadBalancerIP: 192.168.5.15
     annotations:
       metallb.universe.tf/allow-shared-ip: unifi-svc
   discoveryService:
     type: LoadBalancer
-    loadBalancerIP: 192.168.100.43
+    loadBalancerIP: 192.168.5.15
     annotations:
       metallb.universe.tf/allow-shared-ip: unifi-svc
