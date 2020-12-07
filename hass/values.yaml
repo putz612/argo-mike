@@ -8,11 +8,11 @@ home-assistant:
       cert-manager.io/cluster-issuer: letsencrypt
     path: /
     hosts:
-      - hass2.sievert.fun
+      - hass.sievert.fun
     tls:
       - secretName: hass-tls
         hosts:
-          - hass2.sievert.fun
+          - hass.sievert.fun
   image:
     tag: 0.118.5
   vscode:
