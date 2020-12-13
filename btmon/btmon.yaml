@@ -7,6 +7,8 @@ spec:
   replicas: 1
   revisionHistoryLimit: 10
   selector:
+      matchLabels:
+        workload: btmon
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -14,6 +16,8 @@ spec:
     type: RollingUpdate
   template:
     metadata:
+      labels:
+        workload: btmon
     spec:
       containers:
       - args:
