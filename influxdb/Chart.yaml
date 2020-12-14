@@ -1,1 +1,7 @@
 name: influxdb
+version: 0.0.1
+apiVersion: v2
+dependencies:
+  - name: influxdb
+    version: 1.1.4
+    repository: https://charts.bitnami.com/bitnami

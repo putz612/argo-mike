@@ -13,3 +13,31 @@ influxdb:
   persistence:
     enabled: true
     size: 10Gi
+  adminUser:
+    name: "admin"
+    pwd:
+      valueFrom:
+        secretKeyRef:
+          name: influxdb
+          value: adminUser
+  user:
+    name: "user"
+    pwd:
+      valueFrom:
+        secretKeyRef:
+          name: influxdb
+          value: user
+  readUser:
+    name: "read"
+    pwd:
+      valueFrom:
+        secretKeyRef:
+          name: influxdb
+          value: readUser
+  writeUser:
+    name: "write"
+    pwd:
+      valueFrom:
+        secretKeyRef:
+          name: influxdb
+          value: writeUser
