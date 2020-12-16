@@ -4,8 +4,8 @@ influxdb:
     certManager: true
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt
-    path: /
-      - hosts: influxdb.sievert.fun
+    hosts:
+      - name: influxdb.sievert.fun
         path: /
     tls:
       - hosts:
