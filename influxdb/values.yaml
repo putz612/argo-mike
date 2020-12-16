@@ -1,15 +1,16 @@
 influxdb:
-  authEnabled: false
-  deploymentStrategy:
-    type: Recreate
   ingress:
     enabled: true
-    tls: true
-    secretName: influxdb-tls
+    certManager: true
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt
     path: /
-    hostname: influxdb.sievert.fun
+      - hosts: influxdb.sievert.fun
+        path: /
+    tls:
+      - hosts:
+        - influxdb.sievert.fun
+      secretName: influxdb-tls
   persistence:
     enabled: true
     size: 10Gi
