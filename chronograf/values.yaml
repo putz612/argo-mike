@@ -12,4 +12,4 @@ chronograf:
   persistence:
     enabled: true
     size: 1Gi
-    keepPvd: false
+    keepPvc: false
