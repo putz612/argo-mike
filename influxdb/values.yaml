@@ -8,8 +8,8 @@ influxdb:
       - name: influxdb.sievert.fun
         path: /
     tls:
-      - hosts:
-        - influxdb.sievert.fun
+    - hosts:
+      - influxdb.sievert.fun
       secretName: influxdb-tls
   persistence:
     enabled: true
